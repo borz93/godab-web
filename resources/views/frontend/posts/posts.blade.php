@@ -6,14 +6,14 @@
         <div class='col-md-12'>
             <div class="jumbotron">
                 <h1 class="jumbotron-title">Noticias</h1>
-
                 <p>En esta sección encontrarás las ultimas noticias relacionada con la web de manera ordenada.</p>
-
             </div>
-            @each('frontend.posts.layouts.previews.posts',$posts,'post')
-            {!! $posts->render() !!}
         </div>
-        <!-- /.row -->
+    </div>
+    <div class="row">
+        {{--Colums class inside preview view--}}
+        @each('frontend.posts.layouts.previews.posts',$posts,'post')
+        {!! $posts->render() !!}
     </div>
 </div>
 

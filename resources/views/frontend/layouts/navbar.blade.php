@@ -11,26 +11,26 @@
         </div>
         <div class="navbar-collapse collapse navbar-warning-collapse">
             <ul class="nav navbar-nav">
-                <li class="{{ Helper::set_active('/') }}"><a href="{{url("/")}}">Inicio</a></li>
-                <li class="{{ Helper::set_active('noticias*') }}"><a href="{{url("noticias")}}">Noticias</a></li>
+                <li class="{{ Helper::set_active('/') }}">{!! link_to('/','Inicio') !!}</li>
+                <li class="{{ Helper::set_active('noticias*') }}">{!! link_to('noticias','Noticias') !!}</li>
                 <li class="dropdown {{ Helper::set_active('analisis*') }}">
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">
                         Análisis <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{url('analisis/')}}">Productos</a></li>
+                        <li>{!! link_to('analisis/','Productos') !!}</li>
                         <li class="divider"></li>
                         @foreach($navbar->products() as $product)
-                        <li><a href="{{url('analisis/'.$product->slug)}}">{{$product->name}}</a></li>
+                        <li>{!! link_to('analisis/'.$product->slug,$product->name) !!}</li>
                         @endforeach
                     </ul>
                 </li>
-                <li class="{{ Helper::set_active('articulos*') }}"><a href="{{url("articulos")}}">Qué y como tomar</a></li>
-                <li class="{{ Helper::set_active('musica') }}"><a href="{{url("musica")}}">Música</a></li>
+                <li class="{{ Helper::set_active('articulos*') }}">{!! link_to('articulos','Qué y como tomar') !!}</li>
+                <li class="{{ Helper::set_active('musica') }}">{!! link_to('musica','Música') !!}</li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{url("contacto")}}">Contacto</a></li>
-                <li><a href="{{url("sobre")}}">Sobre</a></li>
+                <li> {!! link_to('contacto','Contacto') !!}</li>
+                <li> {!! link_to('sobre','Sobre') !!}</li>
             </ul>
             {!! Form::open(['url' => 'resultado-busqueda', 'method' =>'get','files'=>false,'class'=>'navbar-form navbar-right']) !!}
                 <div class="form-group">

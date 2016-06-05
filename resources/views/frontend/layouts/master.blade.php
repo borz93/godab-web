@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 @include('frontend.layouts.base')
-<body class="">
+<body>
 <div class="container">
-    <!-- NAVBAR -->
+    {{--NAVBAR--}}
     @include('frontend.layouts.navbar')
-
-    <!-- CONTENT -->
+    {{--CONTENT--}}
     <div class="container-fluid">
-        @include('frontend.layouts.breadcrumbs')
-        <!-- Main content -->
+        <div class="row">
+            <div class="col-md-12">
+                @include('frontend.layouts.breadcrumbs')
+            </div>
+        </div>
+        {{--Main content--}}
         <section class="content">
-            <!-- Your Page Content Here -->
             @yield('content')
         </section>
     </div>
-
 </div>
-<!-- Footer -->
+{{--Footer --}}
 @include('frontend.layouts.footer')
-<!-- ./wrapper -->
 
 <!-- REQUIRED JS SCRIPTS -->
 <script src="{{ asset('/js/app.js') }}"></script>

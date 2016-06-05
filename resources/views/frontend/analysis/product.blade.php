@@ -1,19 +1,18 @@
 @extends('frontend.layouts.master')
 @section('page-title', 'Análisis - '.$product->name)
 @section('content')
-
-    <div class='row'>
-        <div class='col-md-12'>
-            <div class="jumbotron">
-                <h1 class="jumbotron-title">{{$product->name}}</h1>
-
-                <p>{{$product->description}}</p>
-
-            </div>
-            @include('frontend.analysis.layouts.previews.subproducts')
+<div class='row'>
+    <div class='col-md-12'>
+        <div class="jumbotron">
+            <h1 class="jumbotron-title">{{$product->name}}</h1>
+            <p>{{$product->description}}</p>
         </div>
-        <!-- /.row -->
     </div>
+</div>
+<div class='row'>
+    @each('frontend.analysis.layouts.previews.subproducts',$product->subproducts,'subproduct')
+</div>
+
 @endsection
 
 @section('javascript')

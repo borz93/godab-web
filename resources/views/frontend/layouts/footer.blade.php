@@ -4,19 +4,19 @@
             <div class="col-md-4 col-xs-6">
                 <h5 class="footer-white-text">Enlaces</h5>
                 <ul class="list-unstyled">
-                    <li>{{link_to('/','Inicio',['class'=>''])}}</li>
-                    <li>{{link_to('/','Noticias',['class'=>''])}}</li>
-                    <li>{{link_to('/','Análisis',['class'=>''])}}</li>
-                    <li>{{link_to('/','Que y como tomar',['class'=>''])}}</li>
-                    <li>{{link_to('/','Música',['class'=>''])}}</li>
+                    <li>{{link_to('/','Inicio')}}</li>
+                    <li>{{link_to('noticias','Noticias')}}</li>
+                    <li>{{link_to('analisis','Análisis')}}</li>
+                    <li>{{link_to('articulos','Que y como tomar')}}</li>
+                    <li>{{link_to('musica','Música')}}</li>
                 </ul>
             </div>
             <div class="col-md-4 col-xs-6">
                 <h5 class="footer-white-text">Información</h5>
                 <ul class="list-unstyled">
-                    <li>{{link_to('/','Contacto',['class'=>''])}}</li>
-                    <li>{{link_to('/','Sobre la web',['class'=>''])}}</li>
-                    <li>{{link_to('/','Servicios',['class'=>''])}}</li>
+                    <li>{{link_to('contacto','Contacto')}}</li>
+                    <li>{{link_to('sobre','Sobre la web')}}</li>
+                    <li>{{link_to('/','Servicios')}}</li>
                 </ul>
             </div>
             <div class="col-md-4 col-xs-12">
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-        <div class="footer-copyright text-center">
-            <p>© 2016 Copyright:<a href="#"> Godab.com </a></p>
-        </div>
+    <div class="footer-copyright text-center">
+        <p>© 2016 Copyright:{!! link_to('/','Godab.es') !!}</p>
+    </div>
 </footer>

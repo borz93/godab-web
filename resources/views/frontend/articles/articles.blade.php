@@ -1,19 +1,20 @@
 @extends('frontend.layouts.master')
 @section('page-title', 'Artículos')
 @section('content')
-
-    <div class='row'>
-        <div class='col-md-12'>
-            <div class="jumbotron">
-                <h1 class="jumbotron-title">Artículos</h1>
-
-                <p>Si lo que necesitas es informacion mas detallada o especifica, aqui encontraras articulos explicados para que no te quede ninguna duda.</p>
-
-            </div>
-            @each('frontend.articles.layouts.previews.article',$articles,'article')
+<div class='row'>
+    <div class='col-md-12'>
+        <div class="jumbotron">
+            <h1 class="jumbotron-title">Artículos</h1>
+            <p>Si lo que necesitas es informacion mas detallada o especifica, aqui encontraras articulos explicados para que no te quede ninguna duda.</p>
         </div>
-        <!-- /.row -->
     </div>
+</div>
+<div class="row">
+    {{--Colums class inside preview view--}}
+    @each('frontend.articles.layouts.previews.article',$articles,'article')
+</div>
+
+
 @endsection
 
 @section('javascript')
