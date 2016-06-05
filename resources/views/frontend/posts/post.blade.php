@@ -11,6 +11,7 @@
                     <span>
                         <time datetime="{{date('F d, Y', strtotime($post->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('F d, Y', strtotime($post->created_at))}}</time>
                     </span>
+                    <div class="clearfix"></div>
                     @each('frontend.layouts.tags.tags',explode(",", $post->tags),'tag')
                 </div>
                 <div class="panel-body">
