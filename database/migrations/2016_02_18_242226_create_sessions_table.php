@@ -17,6 +17,7 @@ class CreateSessionsTable extends Migration
             $table->string('title');
             $table->string('video');
             $table->longText('body');
+            $table->string('tags');
             $table->integer('session_genre_id')->unsigned();
             $table->foreign('session_genre_id')->references('id')->on('session_genres')->onDelete('cascade');
             $table->integer('user_id')->unsigned();

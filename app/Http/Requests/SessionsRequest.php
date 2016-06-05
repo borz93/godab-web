@@ -37,6 +37,7 @@ class SessionsRequest extends Request
                     'title' => 'string|required|unique:sessions,title',
                     'video' => 'url|required',
                     'body' => 'required',
+                    'tags' => 'required',
                     'session_genre_id' => 'required|exists:session_genres,id',
                     'image' => 'image|mimes:jpeg,png|min:1|max:750'
                 ];
@@ -47,6 +48,7 @@ class SessionsRequest extends Request
                     'title' => 'string|required|unique:sessions,title,'.$session->id,
                     'video' => 'url',
                     'body' => 'required',
+                    'tags' => 'required',
                     'session_genre_id' => 'required|exists:session_genres,id',
                     'image' => 'image|mimes:jpeg,png|min:1|max:750'
                 ];

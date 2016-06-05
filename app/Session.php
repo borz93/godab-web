@@ -12,7 +12,7 @@ class Session extends Model implements SluggableInterface
     protected $table = 'sessions';
     use SluggableTrait,SoftDeletes;
     protected $fillable = [
-        'title', 'video', 'body', 'file_id','session_genre_id'
+        'title', 'video', 'body', 'file_id','session_genre_id','tags'
     ];
     protected $dates = ['deleted_at'];
     public function user()

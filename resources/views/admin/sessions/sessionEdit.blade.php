@@ -27,7 +27,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="thumbnail">
                                 <img src="{{ url("image/cache/medium/".$session->file->name) }}" alt="{{$session->file->name}}">
@@ -41,17 +40,22 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 {!! Form::label('session_genre_id','Género') !!}
-                                {!! Form::select('session_genre_id', $session_genres,$session->genre_id,['placeholder' => '-Selecciona género-','class' => 'form-control dropdown-toggle','data-toggle'=>'dropdown','id'=>'genre']) !!}
+                                {!! Form::select('session_genre_id', $session_genres,$session->genre_id,['class' => 'form-control dropdown-toggle','data-toggle'=>'dropdown','id'=>'genre']) !!}
                                 <p class="help-block">Selecciona a que género pertenece.</p>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {!! Form::label('body','Cuerpo de la sesión') !!}
+                                {!! Form::textarea('body',$session->body,['class'=>'form-control', 'id'=>'session-editor','placeholder' => 'Sesión']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('tags','Tags') !!}
+                                {!! Form::text('tags',$session->tags,['class'=>'form-control','data-role'=>'tagsinput']) !!}
+                                <p class="help-block">Palabras clave. Escribirlas correctamente y usar coma o enter para ir insertando.</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="form-group">
-                        {!! Form::label('body','Cuerpo de la sesión') !!}
-                        {!! Form::textarea('body',$session->body,['class'=>'form-control', 'id'=>'session-editor','placeholder' => 'Sesión']) !!}
-                    </div>
-
                 </div>
                 <div class="box-footer">
                     {!! Form::submit('Publicar', ['class' => 'btn btn-primary']) !!}
@@ -67,6 +71,7 @@
 
 @section('javascript')
     <script src={{ asset('/js/ckeditor/ckeditor.js') }}></script>
+    <script src={{ asset('/js/bootstrap-tagsinput.min.js') }}></script>
     <script>
         CKEDITOR.replace('session-editor', {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
