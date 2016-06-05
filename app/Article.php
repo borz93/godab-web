@@ -15,7 +15,7 @@ class Article extends Model implements SluggableInterface
     use SluggableTrait,SoftDeletes,Eloquence;
 
     protected $fillable = [
-        'title','intro','body','references','product_id','file_id', 'tags'
+        'title','intro','body','references','product_id','file_id','tags'
     ];
     protected $searchableColumns = ['title', 'body', 'tags'];
     protected $dates = ['deleted_at'];

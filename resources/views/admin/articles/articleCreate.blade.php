@@ -77,7 +77,7 @@
 
 @section('javascript')
     <script src={{ asset('/js/ckeditor/ckeditor.js') }}></script>
-
+    <script src={{ asset('/js/bootstrap-tagsinput.min.js') }}></script>
     <script>
         CKEDITOR.replace('analysis-editor', {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
