@@ -53,7 +53,7 @@
 
 @section('javascript')
     <script src={{ asset('/js/ckeditor/ckeditor.js') }}></script>
-    c
+    <script src={{ asset('/js/bootstrap-tagsinput.min.js') }}></script>
     <script>
         CKEDITOR.replace('post-editor', {
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
