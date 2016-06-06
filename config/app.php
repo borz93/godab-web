@@ -155,6 +155,7 @@ return [
         Sofa\Eloquence\ServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -164,6 +165,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\AnnotationsServiceProvider::class,
+
     ],
 
     /*
