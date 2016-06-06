@@ -16,10 +16,12 @@
             </div>
             <div class="panel-footer">
                 <div class="clearfix">
-                     <span>
+                     <span class="custom-span-x2">
                         <time datetime="{{date('F d, Y', strtotime($analysi->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('F d, Y', strtotime($analysi->created_at))}}</time>
                     </span>
-                    <span><i class="fa fa-copyright fa-fw fa-orange"></i>{{$analysi->brand}}</span>
+                    <span class="custom-span-x2"><i class="fa fa-copyright fa-fw fa-orange"></i>{{$analysi->brand}}</span>
+                    <div class="clearfix"></div>
+                    @each('frontend.layouts.tags.tags',explode(",", $analysi->tags),'tag')
                     {{link_to('analisis/'.$analysi->subproduct->product->slug.'/'.$analysi->subproduct->slug.'/'.$analysi->slug,'Leer análisis',['class'=>'btn btn-indigo pull-right'])}}
                 </div>
             </div>

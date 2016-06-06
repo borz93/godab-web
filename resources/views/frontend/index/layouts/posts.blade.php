@@ -16,11 +16,14 @@
                             <h4 class="list-group-item-heading">
                                 {{link_to('noticias/'.$post->id.'/'.$post->slug,$post->title,['class'=>'custom-link'])}}
                             </h4>
+                            <span class="custom-span">
+                                <time class="content-date" datetime="{{date('d/m/Y', strtotime($post->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('d/m/Y', strtotime($post->created_at))}}</time>
+                            </span>
                             <p>{!! strip_tags(str_limit($post->body,80)) !!}</p>
                         </div>
                     </div>
                 </div>
-                <span class="label label-warning">{{date('F d, Y', strtotime($post->created_at))}}</span>
+                {{link_to('noticias/'.$post->id.'/'.$post->slug,'Ir noticia',['class'=>'btn btn-raised btn-xs btn-indigo pull-right'])}}
                 <div class="list-group-separator"></div>
             @endforeach
         </div>

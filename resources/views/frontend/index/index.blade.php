@@ -9,7 +9,6 @@
         </div>
         @if(!$alert->isEmpty() )
             <div class='col-md-12'>
-                <!-- SLIDER -->
                 @include('frontend.index.layouts.alert')
             </div>
         @endif

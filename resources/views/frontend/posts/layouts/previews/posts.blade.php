@@ -16,9 +16,11 @@
                 </div>
                 <div class="panel-footer">
                     <div class="clearfix">
-                         <span>
-                            <time datetime="{{date('F d, Y', strtotime($post->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('F d, Y', strtotime($post->created_at))}}</time>
+                         <span class="custom-span-x2">
+                            <time datetime="{{date('d/m/Y', strtotime($post->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('d/m/Y', strtotime($post->created_at))}}</time>
                         </span>
+                        <div class="clearfix"></div>
+                        @each('frontend.layouts.tags.tags',explode(",", $post->tags),'tag')
                         {{link_to('noticias/'.$post->id.'/'.$post->slug,'Leer noticia',['class'=>'btn btn-indigo pull-right'])}}
                     </div>
                 </div>

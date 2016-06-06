@@ -7,37 +7,39 @@ html {
     position: relative;
     min-height: 100%;
 }
-.container {
-    height: auto;
-}
+
 p{
-    margin: 0;
-    margin-bottom: 1.5em;
-    word-wrap: break-word;
-    color: rgba(35,37,40,0.7);
-    line-height: 3.5rem;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 400;
-    vertical-align: baseline;
-}
-body p::-moz-selection{
-    background: yellow;
-}
-body p::selection{
-    background: #FF5722;
-    color: #ffffcc;
-}
-.custom-text{
     margin: 40px 0;
-    /*font-family: "Noto Serif","Times New Roman",Serif;*/
     font-size: 19px;
     font-weight: 400;
     line-height: 35px;
-    /*color: #45464c;*/
+    color: #62646c;
     color: rgba(35,37,40,0.7);
     overflow: hidden;
-    z-index: 50;
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+body p::selection,h1::selection,h2::selection,h3::selection,
+h4::selection,h5::selection,h6::selection,span::selection,
+a::selection,time::selection{
+    background: #FF5722;
+    color: #ffffcc;
+}
+
+.container {
+    height: auto;
+}
+.custom-text{
+    margin: 45px 0;
+    padding: 0;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 35px;
+    color: rgba(35,37,40,0.7);
+
 }
 .custom-link{
     color:#FF5722;
@@ -139,7 +141,15 @@ ul.social-network li {
     background-color: #303F9F;
     color: rgba(255,255,255, 0.84)!important;
 }
-.btn-indigo:hover{
+.btn-indigo{
+    background-color: #303F9F;
+    color: rgba(255,255,255, 0.84)!important;
+}
+.btn.btn-raised.btn-indigo{
+    background-color: #303F9F;
+    color: rgba(255,255,255, 0.84)!important;
+}
+ .btn-indigo:hover{
     background-color: #536DFE!important;
     color: rgba(255,255,255, 0.84)!important;
 }
@@ -385,4 +395,16 @@ section.socialShare > a:active {
 .alert-text{
     color: inherit;
     font-size: 1.6rem;
+}
+.custom-span{
+    font-size: x-small;
+    font-weight: bold;
+    color: #62646c;
+    color: rgba(35,37,40,0.7);
+}
+.custom-span-x2{
+    font-size: small;
+    font-weight: bold;
+    color: #62646c;
+    color: rgba(35,37,40,0.7);
 }

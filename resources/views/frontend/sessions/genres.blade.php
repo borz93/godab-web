@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class='row'>
-    <div class="row col-wrap">
+    <div class="col-wrap">
         @each('frontend.sessions.layouts.previews.genres',$genres,'genre')
     </div>
 </div>

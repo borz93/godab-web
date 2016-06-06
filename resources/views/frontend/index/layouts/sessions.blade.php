@@ -16,12 +16,15 @@
                                     <h4 class="list-group-item-heading">
                                         {{link_to('musica/'.$session->sessionGenre->slug.'/'.$session->slug,$session->title,['class'=>'custom-link'])}}
                                     </h4>
+                                    <span class="custom-span">
+                                        <time class="content-date" datetime="{{date('d/m/Y', strtotime($session->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('d/m/Y', strtotime($session->created_at))}}</time>
+                                    </span>
                                     {{--<p class="list-group-item-text">{!! strip_tags(str_limit($session->body,50)) !!}</p>--}}
                                 </div>
 
                             </div>
-                            <span class="label label-warning">{{date('F d, Y', strtotime($session->created_at))}}</span>
-                            {{link_to('musica/'.$session->sessionGenre->slug,$session->sessionGenre->name,['class'=>'btn btn-raised btn-xs btn-warning'])}}
+                            {{link_to('musica/'.$session->sessionGenre->slug,$session->sessionGenre->name,['class'=>'btn btn-raised btn-xs btn-warning pull-left'])}}
+                            {{link_to('musica/'.$session->sessionGenre->slug.'/'.$session->slug,'Ir Sesión',['class'=>'btn btn-raised btn-xs btn-indigo pull-right'])}}
                         </div>
                     </div>
                 @endforeach

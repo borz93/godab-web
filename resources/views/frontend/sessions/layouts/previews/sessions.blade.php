@@ -16,8 +16,8 @@
             </div>
             <div class="panel-footer">
                 <div class="clearfix">
-                     <span>
-                        <time datetime="{{date('F d, Y', strtotime($session->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('F d, Y', strtotime($session->created_at))}}</time>
+                     <span class="custom-span-x2">
+                        <time datetime="{{date('d/m/Y', strtotime($session->created_at))}}"><i class="fa fa-calendar-times-o fa-fw fa-orange"></i>{{date('d/m/Y', strtotime($session->created_at))}}</time>
                     </span>
                     {{link_to('musica/'.$session->sessionGenre->slug.'/'.$session->slug,'Ver sesión',['class'=>'btn btn-indigo pull-right'])}}
                 </div>
