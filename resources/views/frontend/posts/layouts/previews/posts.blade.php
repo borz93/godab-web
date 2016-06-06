@@ -6,7 +6,7 @@
                         {{link_to('noticias/'.$post->id.'/'.$post->slug,$post->title,['class'=>''])}}
                     </h1>
                     <div class="text-center image-wrapper">
-                        <img src="{{ url("image/cache/original/".$post->files()->first()->name) }}" data-adaptive-background="1" class="img-responsive image-preview">
+                        <img src="{{ url("image/cache/original/".$post->file->name) }}" data-adaptive-background="1" class="img-responsive image-preview">
                     </div>
                 </div>
                 <div class="panel-body">

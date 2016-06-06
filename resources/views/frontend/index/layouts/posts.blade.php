@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-2 col-xs-3">
                             <div class="row-picture">
-                                <img class="circle" src="{{ url("image/cache/small/".$post->files()->first()->name) }}" alt="icon">
+                                <img class="circle" src="{{ url("image/cache/small/".$post->file->name) }}" alt="icon">
                             </div>
                         </div>
                         <div class="col-md-10 col-sm-10 col-xs-9">

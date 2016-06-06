@@ -15,7 +15,7 @@
                     @each('frontend.layouts.tags.tags',explode(",", $post->tags),'tag')
                 </div>
                 <div class="panel-body">
-                    <img src="{{ url("image/cache/original/".$post->files()->first()->name) }}" class="img-responsive image-full">
+                    <img src="{{ url("image/cache/original/".$post->file->name) }}" class="img-responsive image-full">
                     <div class="custom-text">
                         {!! $post->body !!}
                     </div>

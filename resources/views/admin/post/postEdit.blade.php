@@ -26,7 +26,7 @@
                     </div>
                     <div class='col-md-6'>
                         <div class="thumbnail">
-                            <img src="{{ url("image/cache/medium/".$post->files()->first()->name) }}" alt="{{$post->files()->first()->name}}">
+                            <img src="{{ url("image/cache/medium/".$post->file->name) }}" alt="{{$post->file->name}}">
                         </div>
                         <div class="form-group">
                             {!! Form::label('image','Imagen principal') !!}

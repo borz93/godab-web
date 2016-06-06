@@ -33,7 +33,7 @@ class PostController extends Controller
         $post->user_id = Auth::user()->id;
         Notification::makeNotification('post','Hay noticias nuevas','admin/lista-noticias');
         $file->save();
-        $file->posts()->save($post);
+        $file->post()->save($post);
 
         return redirect('admin/lista-noticias')->with('succesMessage','Noticia: '.$post->title.' creada!');
     }
@@ -51,7 +51,7 @@ class PostController extends Controller
 
             $image = $request->file('image');
             $postToUpdate =  Post::findOrFail($id);
-            $fileToUpdate = $postToUpdate->files()->first();
+            $fileToUpdate = $postToUpdate->file;
             if(Storage::disk('local')->exists('images/posts_images/'.$fileToUpdate->name)){
                 Storage::delete('images/posts_images/'.$fileToUpdate->name);
                 $file=$this->imageManipulate($image,$request->title,$fileToUpdate);
@@ -72,7 +72,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $postToDestroy = Post::findOrFail($id);
-        $file = $postToDestroy->files()->first();
+        $file = $postToDestroy->file;
         if(Storage::disk('local')->exists('images/posts_images/'.$file->name))
         {
             Storage::delete('images/posts_images/'.$file->name);

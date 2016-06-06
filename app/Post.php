@@ -23,9 +23,9 @@ class Post extends Model implements SluggableInterface
     {
         return $this->belongsTo('App\User');
     }
-    public function files()
+    public function file()
     {
-        return $this->belongsToMany('App\File');
+        return $this->belongsTo('App\File');
     }
 
     protected $searchableColumns = ['title', 'body', 'tags'];

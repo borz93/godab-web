@@ -21,7 +21,7 @@ class PostController extends Controller
         SEO::metatags()->addKeyword($post->tags);
 
         SEO::opengraph()->setTitle($post->title)
-            ->addImage(url("image/cache/original/".$post->files()->first()->name))
+            ->addImage(url("image/cache/original/".$post->file->name))
             ->setArticle([
                 'published_time' => $post->created_at->toW3CString(),
                 'modified_time' => $post->updated_at->toW3CString(),

@@ -24,9 +24,9 @@ class File extends Model
     {
         return $this->hasOne('App\Subproduct');
     }
-    public function posts()
+    public function post()
     {
-        return $this->belongsToMany('App\Post');
+        return $this->hasOne('App\Post');
     }
     public function analysis()
     {
