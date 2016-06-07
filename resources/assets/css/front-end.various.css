@@ -41,6 +41,12 @@ a::selection,time::selection{
     color: rgba(35,37,40,0.7);
 
 }
+.custom-text a{
+    color:#FF5722;
+}
+.custom-text a:hover{
+    color:#FF5722;
+}
 .custom-link{
     color:#FF5722;
 }
