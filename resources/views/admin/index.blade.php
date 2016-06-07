@@ -3,7 +3,7 @@
 @section('content')
     <div class='row'>
         <div class='col-md-6'>
-            <p>Primera columna!</p>
+            <p>Aqui se mostraran distintos datos de la web, entre ellos graficas de Google Analitics.</p>
         </div>
         <!-- /.col -->
         <div class='col-md-12'>
