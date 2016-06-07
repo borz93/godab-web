@@ -12,14 +12,14 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-3 col-xs-9">
                                         <div class="row-picture">
-                                            <img class="circle" src="{{ url("image/cache/small/".$related->files()->first()->name) }}" alt="icon">
+                                            <img class="circle" src="{{ url("image/cache/small/".$related->file->name) }}" alt="icon">
                                         </div>
                                     </div>
                                     <div class="col-md-9 col-sm-9 col-xs-9">
                                         <h4 class="list-group-item-heading">
                                             {{link_to('noticias/'.$related->id.'/'.$related->slug,$related->title,['class'=>'custom-link'])}}
                                         </h4>
-                                        <p class="list-group-item-text">{!! strip_tags(str_limit($related->body,80))  !!}</p>
+                                        <p class="list-group-item-text">{!! strip_tags(str_limit($related->body,80)) !!}</p>
                                     </div>
                                 </div>
                             </div>

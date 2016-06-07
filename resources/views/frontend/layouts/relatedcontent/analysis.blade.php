@@ -19,10 +19,9 @@
                                         <h4 class="list-group-item-heading">
                                             {{link_to('analisis/'.$related->subproduct->product->slug.'/'.$related->subproduct->slug.'/'.$related->slug,$related->title,['class'=>'custom-link'])}}
                                         </h4>
-                                        <p class="list-group-item-text">{!! strip_tags(str_limit($related->body,20)) !!}</p>
+                                        <p class="list-group-item-text">{!! strip_tags(str_limit($related->body,80)) !!}</p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
