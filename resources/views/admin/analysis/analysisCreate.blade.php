@@ -6,11 +6,11 @@
         <div class="box box-primary">
             <div class="box-header with-border">
                 <h3 class="box-title">Crear nuevo análisis en la web</h3>
-                {{link_to(URL::previous(),' Volver',['class'=>'btn btn-info pull-right'])}}
+                {{link_to(URL::previous(),'Volver',['class'=>'btn btn-info pull-right'])}}
             </div>
             @include('admin.layouts.messages')
-            <div class="box-body">
-                {!! Form::open(['url'=>'admin/guardar-analisis', 'method' =>'POST','files'=>true]) !!}
+            {!! Form::open(['url'=>'admin/guardar-analisis', 'method' =>'POST','files'=>true]) !!}
+                <div class="box-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -99,9 +99,7 @@
                                         {!! Form::number('nutritional_info_quantity_y[]',null,['class'=>'form-control']) !!}
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                     <div class="form-group">
@@ -114,9 +112,7 @@
                 </div>
             {!! Form::close() !!}
         </div>
-    <!-- /.col -->
     </div>
-<!-- /.row -->
 </div>
 
 @endsection

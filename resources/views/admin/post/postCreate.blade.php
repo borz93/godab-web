@@ -10,38 +10,38 @@
             </div>
             @include('admin.layouts.messages')
             {!! Form::open(['url'=>'admin/guardar-noticia', 'method' =>'POST','files'=>true]) !!}
-            <div class="box-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            {!! Form::label('title','Título') !!}
-                            {!! Form::text('title',null,['class'=>'form-control','placeholder' => 'Título']) !!}
-                            <p class="help-block">Título de la noticia. Debe ser único</p>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {!! Form::label('title','Título') !!}
+                                {!! Form::text('title',null,['class'=>'form-control','placeholder' => 'Título']) !!}
+                                <p class="help-block">Título de la noticia. Debe ser único</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            {!! Form::label('image','Imagen principal') !!}
-                            {!! Form::file('image', null) !!}
-                            <p class="help-block">Imagen de portada de la noticia.</p>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {!! Form::label('image','Imagen principal') !!}
+                                {!! Form::file('image', null) !!}
+                                <p class="help-block">Imagen de portada de la noticia.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class='col-md-12'>
-                        <div class="form-group">
-                            {!! Form::label('body','Cuerpo de la noticia') !!}
-                            {!! Form::textarea('body',null,['class'=>'form-control', 'id'=>'post-editor','placeholder' => 'Noticia']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('tags','Tags') !!}
-                            {!! Form::text('tags',null,['class'=>'form-control','data-role'=>'tagsinput']) !!}
-                            <p class="help-block">Palabras clave. Escribirlas correctamente y usar coma o enter para ir insertando.</p>
+                        <div class='col-md-12'>
+                            <div class="form-group">
+                                {!! Form::label('body','Cuerpo de la noticia') !!}
+                                {!! Form::textarea('body',null,['class'=>'form-control', 'id'=>'post-editor','placeholder' => 'Noticia']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('tags','Tags') !!}
+                                {!! Form::text('tags',null,['class'=>'form-control','data-role'=>'tagsinput']) !!}
+                                <p class="help-block">Palabras clave. Escribirlas correctamente y usar coma o enter para ir insertando.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="box-footer">
-                {!! Form::submit('Publicar', ['class' => 'btn btn-primary']) !!}
-            </div>
+                <div class="box-footer">
+                    {!! Form::submit('Publicar', ['class' => 'btn btn-primary']) !!}
+                </div>
             {!! Form::close() !!}
         </div>
     <!-- /.col -->
