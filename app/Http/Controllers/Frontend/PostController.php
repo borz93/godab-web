@@ -34,7 +34,7 @@ class PostController extends Controller
     public function related($post)
     {
         $relateds = new Collection();
-        $relateds->add(Post::where('id','!=',$post->id)->search($post->title,true)->take(3)->get()) ;
+        $relateds->add(Post::where('id','!=',$post->id)->search($post->title,true)->take(3)->get());
         $relateds = $relateds->filter(function ($item){
             if(!$item->isEmpty()){
                 return $item;

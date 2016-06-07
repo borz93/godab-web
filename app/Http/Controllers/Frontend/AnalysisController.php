@@ -53,7 +53,7 @@ class AnalysisController extends Controller
     public function related($analysi)
     {
         $relateds = new Collection();
-        $relateds->add(Analysis::where('id','!=',$analysi->id)->search($analysi->title,true)->get()) ;
+        $relateds->add(Analysis::where('id','!=',$analysi->id)->search($analysi->title,true)->take(3)->get()) ;
         $relateds = $relateds->filter(function ($item){
             if(!$item->isEmpty()){
                 return $item;
