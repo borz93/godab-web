@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('page-title', $post->slug)
+@section('page-title', $post->title)
 @section('content')
 
     <div class='row'>
