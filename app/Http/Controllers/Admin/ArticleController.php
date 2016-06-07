@@ -108,7 +108,7 @@ class ArticleController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_article.png';
+        $file->name = str_slug($fileName,'-') . '_article.png';
         $file->route = storage_path('app/images/articles_images/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = 'png';

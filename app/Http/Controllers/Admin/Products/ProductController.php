@@ -144,7 +144,7 @@ class ProductController extends Controller
         $img = $imageManager->make($image->getRealPath())->encode('png');
         $img->resize(500, 300, function () {
         });
-        $file->name = camel_case($fileName) . '_product.png';
+        $file->name = str_slug($fileName,'-') . '_product.png';
         $file->route = storage_path('app/images/products/products_images/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = $image->getClientOriginalExtension();

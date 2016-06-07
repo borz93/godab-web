@@ -86,7 +86,7 @@ class UserController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_avatar.png';
+        $file->name = str_slug($fileName,'-') . '_avatar.png';
         $file->route = storage_path('app/images/admin/avatar/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = 'png';

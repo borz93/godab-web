@@ -121,7 +121,7 @@ class SessionController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_session.png';
+        $file->name = str_slug($fileName,'-') . '_session.png';
         $file->route = storage_path('app/images/sessions/session_images/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = 'png';

@@ -142,7 +142,7 @@ class SlideImageController extends Controller
         $img = $imageManager->make($image->getRealPath())->encode('png');
         $img->resize(1200, 500, function () {
         });
-        $file->name = camel_case($fileName) . '_slider.png';
+        $file->name = str_slug($fileName,'-') . '_slider.png';
         $file->route = public_path('/images/slider_images/'. $file->name);
         $file->mimetype = $img->mime();
         $file->extension = 'png';

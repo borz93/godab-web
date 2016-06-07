@@ -160,7 +160,7 @@ class AnalysisController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_analysis.png';
+        $file->name = str_slug($fileName,'-') . '_analysis.png';
         $file->route = storage_path('app/images/analysis_images/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = 'png';

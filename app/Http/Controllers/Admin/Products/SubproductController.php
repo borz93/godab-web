@@ -151,7 +151,7 @@ class SubproductController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_subproduct.png';
+        $file->name = str_slug($fileName,'-') . '_subproduct.png';
         $file->route = storage_path('app/images/products/subproducts_images/'. $file->name);
         $file->mimetype = $img->mime();
         $file->extension = $image->getClientOriginalExtension();

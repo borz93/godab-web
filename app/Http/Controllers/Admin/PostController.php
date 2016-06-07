@@ -106,7 +106,7 @@ class PostController extends Controller
         $img->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $file->name = camel_case($fileName) . '_post.png';
+        $file->name = str_slug($fileName,'-') . '_post.png';
         $file->route = storage_path('app/images/posts_images/'). $file->name;
         $file->mimetype = $img->mime();
         $file->extension = 'png';
