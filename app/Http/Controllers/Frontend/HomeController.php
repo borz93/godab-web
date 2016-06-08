@@ -36,9 +36,11 @@ class HomeController extends Controller
         $analysis = Analysis::orderBy('created_at', 'desc')->take(5)->get();
         $sessions = Session::orderBy('created_at', 'desc')->get();
         $alert = Alert::where('active',true)->get();
-        $randomsession = $sessions->slice(3)->random();
-        $sessions = $sessions->take(3);
-        $sessions->push($randomsession);
+        if(!$sessions->isEmpty()){
+            $randomsession = $sessions->slice(3)->random();
+            $sessions = $sessions->take(3);
+            $sessions->push($randomsession);
+        }
 
         SEO::setDescription('Godab.es - Tu web de información y actualidad sobre alimentación, dietas, ejercicio y todo para tener un cuerpo sano.');
         SEO::metatags()->addKeyword('Godab, nutrición, ejercicio, dieta, gimnasio, cuerpo');
