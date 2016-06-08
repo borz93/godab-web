@@ -22,7 +22,8 @@
         "sofa/eloquence": "~5.2@dev",
         "mews/captcha": "^2.1",
         "artesaos/seotools": "^0.9.2",
-        "mpociot/laravel-test-factory-helper": "^0.2.1"
+        "mpociot/laravel-test-factory-helper": "^0.2.1",
+        "caouecs/laravel-lang":"~3.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
