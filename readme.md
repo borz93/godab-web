@@ -5,12 +5,16 @@ Cuenta con panel de administración.
 
 ### Instrucciones
 
-Una vez clonado el repositorio, hacer los siguientes comandos por consola:
+Necesario PHP 7.0
+Una vez clonado el repositorio, editar el archivo .env y hacer los siguientes comandos por consola:
 
-    -composer update
-    -bower update
+    -composer update --no-scripts
+    -composer dump-autoload
     -npm update
-    -artisan migration
+    -npm install -g gulp
+    -gulp
+    -php artisan key:generate
+    -php artisan migrate
     -gulp
 
 ### License
