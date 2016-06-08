@@ -7,7 +7,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{ url("image/cache/small/".Auth::user()->file->name) }}" class="user-image" alt="User Image"/>
+                @if(Auth::user()->file == null || Auth::user()->file == "")
+                    <img src="{{ url("image/cache/small/any_image_profile.png") }}" class="user-image" alt="User Image"/>
+                @else
+                    <img src="{{ url("image/cache/small/".Auth::user()->file->name) }}" class="user-image" alt="User Image"/>
+                @endif
             </div>
             <div class="pull-left info">
                 <p>{{Auth::user()->name}}</p>
