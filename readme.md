@@ -13,6 +13,8 @@ Una vez clonado el repositorio, editar el archivo .env y hacer los siguientes co
     -npm update
     -npm install -g gulp
     -npm install -g bower
+    -npm install bootstrap-material-design (temporal)
+    -npm install jquery-match-height (temporal)
     -bower update
     -php artisan key:generate
     -php artisan migrate
