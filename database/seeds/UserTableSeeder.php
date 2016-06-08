@@ -13,11 +13,12 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'BorjaGay',
-            'email' => 'borja@gay.es',
-            'password' => 'gay'
+            'name' => 'admintemp',
+            'email' => 'admintemp@admintemp.com',
+            'role' => 'admin',
+            'password' => 'admintemp'
         ]);
-
+        /*
         $faker = Faker::create();
         for($i = 0; $i < 10; $i++){
             $user = User::create([
@@ -25,7 +26,7 @@ class UserTableSeeder extends Seeder
                 'email' => $faker->email,
                 'password' => '1234'
             ]);
-        }
+        }*/
 
     }
 }
