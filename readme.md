@@ -12,7 +12,8 @@ Una vez clonado el repositorio, editar el archivo .env y hacer los siguientes co
     -composer dump-autoload
     -npm update
     -npm install -g gulp
-    -gulp
+    -npm install -g bower
+    -bower update
     -php artisan key:generate
     -php artisan migrate
     -gulp
