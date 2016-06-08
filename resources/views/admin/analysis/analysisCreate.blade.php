@@ -28,11 +28,10 @@
                                     <div class="form-group">
                                         <label for="product">Producto</label>
                                         {!! Form::label('product','Producto') !!}
-                                        {!! Form::select('product', $products,null,['placeholder' => '-Selecciona producto-','class' => 'form-control dropdown-toggle','data-toggle'=>'dropdown','id'=>'product']) !!}
+                                        {!! Form::select('product',$products,null,['placeholder' => '-Selecciona producto-','class' => 'form-control dropdown-toggle','data-toggle'=>'dropdown','id'=>'product']) !!}
                                         <p class="help-block">Selecciona a que producto pertenece.</p>
                                     </div>
                                 </div>
-
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         {!! Form::label('subproduct_id','Subproducto') !!}
@@ -44,7 +43,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="col-md-6">
                             <div class="form-group">
                                 {!! Form::label('image','Imagen principal') !!}
@@ -64,47 +62,49 @@
                                 <p class="help-block">Puntuación del análisis.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            {!! Form::label('body','Cuerpo del análisis') !!}
-                            {!! Form::textarea('body',null,['class'=>'form-control', 'id'=>'analysis-editor','placeholder' => 'Análisis']) !!}
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {!! Form::label('body','Cuerpo del análisis') !!}
+                                {!! Form::textarea('body',null,['class'=>'form-control', 'id'=>'analysis-editor','placeholder' => 'Análisis']) !!}
+                            </div>
+                            <div class="form-group">
+                                {!! Form::label('tags','Tags') !!}
+                                {!! Form::text('tags',null,['class'=>'form-control','data-role'=>'tagsinput']) !!}
+                                <p class="help-block">Palabras clave. Escribirlas correctamente y usar coma o enter para ir insertando.</p>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('tags','Tags') !!}
-                            {!! Form::text('tags',null,['class'=>'form-control','data-role'=>'tagsinput']) !!}
-                            <p class="help-block">Palabras clave. Escribirlas correctamente y usar coma o enter para ir insertando.</p>
-                        </div>
-                    </div>
-                    <div class="nutritional_info_parent">
-                        <label>Información nutricional</label>
-                        <p class="help-block">Datos de información nutricional. Unidades en gramos</p>
-                        <div class="nutritional_info_child">
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group">
-                                        {!! Form::label('nutritional_info_name','Nombre') !!}
-                                        {!! Form::text('nutritional_info_name[]',null,['class'=>'form-control','placeholder' => 'Nombre']) !!}
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group">
-                                        {!! Form::label('nutritional_info_quantity_x','Por toma') !!}
-                                        {!! Form::number('nutritional_info_quantity_x[]',null,['class'=>'form-control']) !!}
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <div class="form-group">
-                                        {!! Form::label('nutritional_info_quantity_y','Por 100 g') !!}
-                                        {!! Form::number('nutritional_info_quantity_y[]',null,['class'=>'form-control']) !!}
+                        <div class="col-md-12">
+                            <div class="nutritional_info_parent">
+                                <label>Información nutricional</label>
+                                <p class="help-block">Datos de información nutricional. Unidades en gramos</p>
+                                <div class="nutritional_info_child">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                {!! Form::label('nutritional_info_name','Nombre') !!}
+                                                <input type="text" placeholder="Nombre" class="form-control" name="nutritional_info_name[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                {!! Form::label('nutritional_info_quantity_x','Por toma') !!}
+                                                <input type="number" class="form-control" name="nutritional_info_quantity_y[]">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 col-sm-4 col-xs-4">
+                                            <div class="form-group">
+                                                {!! Form::label('nutritional_info_quantity_y','Por 100 g') !!}
+                                                <input type="number" class="form-control" name="nutritional_info_quantity_x[]">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <button id="add-more" class="btn btn-success" type="button"><i class="fa fa-plus-circle"></i></button>
-                        <button id="remove" class="btn btn-danger" type="button"><i class="fa fa-minus-circle"></i></button>
+                        <div class="form-group">
+                            <button id="add-more" class="btn btn-success" type="button"><i class="fa fa-plus-circle"></i></button>
+                            <button id="remove" class="btn btn-danger" type="button"><i class="fa fa-minus-circle"></i></button>
+                        </div>
                     </div>
                 </div>
                 <div class="box-footer">

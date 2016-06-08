@@ -30,7 +30,8 @@ class AnalysisController extends Controller
 
     public function create()
     {
-        $products = Product::lists('name', 'id');
+        $products = Product::pluck('name', 'id');
+        $products;
         return view('admin.analysis.analysisCreate',compact('products'));
     }
 
@@ -69,7 +70,7 @@ class AnalysisController extends Controller
     public function edit($id)
     {
         $analysis = Analysis::findOrFail($id);
-        $products = Product::lists('name', 'id');
+        $products = Product::pluck('name', 'id');
         return view('admin.analysis.analysisEdit',compact('analysis','products'));
     }
 
