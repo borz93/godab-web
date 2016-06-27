@@ -14,7 +14,6 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\File');
     }
-
     public function notifications()
     {
         return $this->hasMany('App\Notification');
@@ -30,6 +29,20 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMany('App\Articles');
+    }
+    /*
+     * Check if the user have a vatar image, if not, use a default image
+     */
+    public function avatarAction()
+    {
+
+        if ($this->attributes['file_id']){
+            $aux = $this->file;
+            return $aux->name;
+        }else{
+            
+            return "any_image_profile.png";
+        }
     }
     /**
      * The attributes that are mass assignable.

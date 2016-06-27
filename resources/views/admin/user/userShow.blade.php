@@ -13,7 +13,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
-                                <img src="{{ url("image/cache/medium/".Auth::user()->file->name) }}" class="img-circle img-responsive">
+                                <img src="{{ url("image/cache/medium/".Auth::user()->avatarAction()) }}" class="img-circle img-responsive" alt="Avatar image">
                             </div>
                         </div>
                     </div>
