@@ -17,7 +17,7 @@ class AnalysisController extends Controller
 {
     public function show($product,$subproduct,$analysi)
     {
-        $analysi = Analysis::findBySlug($analysi);
+        $analysi = Analysis::findBySlugOrFail($analysi);
         $subproduct =$analysi->subproduct;
         $relateds = $this->related($analysi);
 

@@ -12,7 +12,7 @@ class ArticleController extends Controller
 {
     public function show($product,$article)
     {
-        $article = Article::findBySlug($article);
+        $article = Article::findBySlugOrFail($article);
         $references = explode(",", $article->references);
         for($i =0;$i<count($references);$i++){
             $referencesarray[str_slug($references[$i],'-')] = $references[$i];

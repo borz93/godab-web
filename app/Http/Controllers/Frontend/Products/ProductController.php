@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function show($product)
     {
-        $product = Product::findBySlugOrId($product);
+        $product = Product::findBySlugOrIdOrFail($product);
         return view('frontend.analysis.product',compact('product'));
     }
 }
