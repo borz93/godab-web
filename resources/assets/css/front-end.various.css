@@ -414,3 +414,6 @@ section.socialShare > a:active {
     color: #62646c;
     color: rgba(35,37,40,0.7);
 }
+.error-box{
+    padding-top: 10%;
+}
