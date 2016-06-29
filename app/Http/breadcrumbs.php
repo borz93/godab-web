@@ -272,3 +272,17 @@ Breadcrumbs::register('musica-genero-sesion', function($breadcrumbs, $session)
     $breadcrumbs->parent('musica-genero',$session->sessionGenre);
     $breadcrumbs->push($session->title, url('musica/'.$session->sessionGenre->slug,$session->slug));
 });
+//------------------------------------------------------------------------------------
+// Index > Sobre
+Breadcrumbs::register('sobre', function($breadcrumbs)
+{
+    $breadcrumbs->parent('index');
+    $breadcrumbs->push('Sobre', url('sobre/'));
+});
+//------------------------------------------------------------------------------------
+// Index > Contacto
+Breadcrumbs::register('contacto', function($breadcrumbs)
+{
+    $breadcrumbs->parent('index');
+    $breadcrumbs->push('Contacto', url('contacto/'));
+});

@@ -6,7 +6,7 @@
 @if(Request::is('noticias'))
     {!! Breadcrumbs::render('noticias') !!}
 @endif
-@if(Request::is('noticias/*/*'))
+@if(Request::is('noticias/*/*') && isset($post))
     {!! Breadcrumbs::render('noticia',$post) !!}
 @endif
 
@@ -38,4 +38,12 @@
 @endif
 @if(Request::is('musica/*/*') && isset($session))
     {!! Breadcrumbs::render('musica-genero-sesion',$session) !!}
+@endif
+
+@if(Request::is('sobre'))
+    {!! Breadcrumbs::render('sobre') !!}
+@endif
+
+@if(Request::is('contacto'))
+    {!! Breadcrumbs::render('contacto') !!}
 @endif
