@@ -156,6 +156,7 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        Spatie\Analytics\AnalyticsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -218,6 +219,7 @@ return [
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
     ],
 
 ];
