@@ -27,7 +27,7 @@
         {!! Form::close() !!}
         {{--<a href="#">Olvidé mi contraseña</a><br>--}}
         {!! link_to('/','Volver a web principal') !!}
-    </div><
+    </div>
 </div>
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('/js/admin.js') }}"></script>
