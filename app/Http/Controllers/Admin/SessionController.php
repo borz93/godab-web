@@ -34,7 +34,8 @@ class SessionController extends Controller
 
     public function store(SessionsRequest $request)
     {
-        $image = $request->file('image');     //Variable con la imagen recibida
+        $image = $request->file('image');//Variable con la imagen recibida
+//        dd($image);
         $file = $this->imageManipulate($image,$request->title);
         $session = new Session($request->except(['image','video']));
         $session->user_id = Auth::user()->id;
@@ -117,10 +118,12 @@ class SessionController extends Controller
             $file = new FileModel();
         }
         $imageManager = new Image();
-        $img = $imageManager->make($image->getRealPath())->encode('png');
-        $img->resize(intval(500), null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+//        dd($image->getLinkTarget());
+        $img = $imageManager->make($image->getLinkTarget())
+            ->encode('png')
+            ->resize(intval(500), null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
         $file->name = str_slug($fileName,'-') . '_session.png';
         $file->route = storage_path('app/images/sessions/session_images/'). $file->name;
         $file->mimetype = $img->mime();

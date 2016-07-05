@@ -11,25 +11,28 @@ use SEO;
 
 class PostController extends Controller
 {
-    public function show($id)
+    public function show($id,$title)
     {
-        $post = Post::findOrFail($id);
-        $relateds = $this->related($post);
-        SEO::setDescription(str_limit($post->body,150));
-        SEO::metatags()->addMeta('article:published_time', $post->created_at->toW3CString(), 'property');
-        SEO::metatags()->addMeta('article:section','noticias','property');
-        SEO::metatags()->addKeyword($post->tags);
+        $post = Post::findBySlugOrFail($title);
+        if ($post->id == $id){
+            $relateds = $this->related($post);
+            SEO::setDescription(str_limit($post->body,150));
+            SEO::metatags()->addMeta('article:published_time', $post->created_at->toW3CString(), 'property');
+            SEO::metatags()->addMeta('article:section','noticias','property');
+            SEO::metatags()->addKeyword($post->tags);
 
-        SEO::opengraph()->setTitle($post->title)
-            ->addImage(url("image/cache/original/".$post->file->name))
-            ->setArticle([
-                'published_time' => $post->created_at->toW3CString(),
-                'modified_time' => $post->updated_at->toW3CString(),
-                'author' => $post->user->name,
-                //'tag' => 'string / array'
-            ]);
-
-        return view('frontend.posts.post',compact('post','relateds'));
+            SEO::opengraph()->setTitle($post->title)
+                ->addImage(url("image/cache/original/".$post->file->name))
+                ->setArticle([
+                    'published_time' => $post->created_at->toW3CString(),
+                    'modified_time' => $post->updated_at->toW3CString(),
+                    'author' => $post->user->name,
+                    //'tag' => 'string / array'
+                ]);
+            return view('frontend.posts.post',compact('post','relateds'));
+        }else{
+            abort(404);
+        }
     }
     public function related($post)
     {
