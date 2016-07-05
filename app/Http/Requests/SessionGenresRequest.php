@@ -37,7 +37,7 @@ class SessionGenresRequest extends Request
                 return [
                     'name' => 'required|unique:session_genres,name',
                     'description' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PUT':
@@ -45,7 +45,7 @@ class SessionGenresRequest extends Request
                 return [
                     'name' => 'required|unique:session_genres,name,'.$session_genre->id,
                     'description' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PATCH':

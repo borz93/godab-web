@@ -41,7 +41,7 @@ class ArticleRequest extends Request
                     'intro' => 'required|unique:articles,intro',
                     'references' => 'required',
                     'tags' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750',
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750',
                     'product_id' => 'required|exists:products,id'
                 ];
             }
@@ -53,7 +53,7 @@ class ArticleRequest extends Request
                     'intro' => 'required|unique:analysis,intro,'.$article->id,
                     'references' => 'required',
                     'tags' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750',
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750',
                     'product_id' => 'required|exists:products,id'
                 ];
             }

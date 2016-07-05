@@ -39,7 +39,7 @@ class SessionsRequest extends Request
                     'body' => 'required',
                     'tags' => 'required',
                     'session_genre_id' => 'required|exists:session_genres,id',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PUT':
@@ -50,7 +50,7 @@ class SessionsRequest extends Request
                     'body' => 'required',
                     'tags' => 'required',
                     'session_genre_id' => 'required|exists:session_genres,id',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PATCH':

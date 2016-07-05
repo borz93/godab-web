@@ -37,7 +37,7 @@ class SubproductsRequest extends Request
                 return [
                     'name' => 'required|unique:subproducts,name',
                     'description' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750',
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750',
                     'product' =>'required|exists:products,id'
                 ];
             }
@@ -46,7 +46,7 @@ class SubproductsRequest extends Request
                 return [
                     'name' => 'required|unique:subproducts,name,'.$subproduct->id,
                     'description' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750',
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750',
                     'product' =>'required|exists:products,id'
                 ];
             }

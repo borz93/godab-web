@@ -40,7 +40,7 @@ class PostsRequest extends Request
                     'title' => 'required|unique:posts,title',
                     'body' => 'required',
                     'tags' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PUT':
@@ -49,7 +49,7 @@ class PostsRequest extends Request
                     'title' => 'required|unique:posts,title,'.$post->id,
                     'body' => 'required',
                     'tags' => 'required',
-                    'image' => 'image|mimes:jpeg,png|min:1|max:750'
+                    'image' => 'image|mimes:jpg,jpeg,png|min:1|max:750'
                 ];
             }
             case 'PATCH':
