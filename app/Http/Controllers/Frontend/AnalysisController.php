@@ -18,24 +18,24 @@ class AnalysisController extends Controller
     public function show($product,$subproduct,$analysi)
     {
         $analysi = Analysis::findBySlugOrFail($analysi);
-        if($analysi->subproduct->slug == $subproduct && $analysi->subproduct->product->slug == $product){
-            $relateds = $this->related($analysi);
-            SEO::setDescription(str_limit($analysi->body,150));
-            SEO::metatags()->addMeta('article:published_time', $analysi->created_at->toW3CString(), 'property');
-            SEO::metatags()->addMeta('article:section','análisis','property');
-            SEO::metatags()->addKeyword($analysi->tags);
-            SEO::opengraph()->setTitle($analysi->title)
-                ->addImage(url("image/cache/original/".$analysi->file->name))
-                ->setArticle([
-                    'published_time' => $analysi->created_at->toW3CString(),
-                    'modified_time' => $analysi->updated_at->toW3CString(),
-                    'author' => $analysi->user->name,
-                    //'tag' => 'string / array'
-                ]);
-            return view('frontend.analysis.analysi',compact('analysi','relateds'));
-        }else{
-            abort(404);
-        }
+        $subproduct =$analysi->subproduct;
+        $relateds = $this->related($analysi);
+
+        SEO::setDescription(str_limit($analysi->body,150));
+        SEO::metatags()->addMeta('article:published_time', $analysi->created_at->toW3CString(), 'property');
+        SEO::metatags()->addMeta('article:section','análisis','property');
+        SEO::metatags()->addKeyword($analysi->tags);
+
+        SEO::opengraph()->setTitle($analysi->title)
+            ->addImage(url("image/cache/original/".$analysi->file->name))
+            ->setArticle([
+                'published_time' => $analysi->created_at->toW3CString(),
+                'modified_time' => $analysi->updated_at->toW3CString(),
+                'author' => $analysi->user->name,
+                //'tag' => 'string / array'
+            ]);
+
+        return view('frontend.analysis.analysi',compact('analysi','relateds'));
     }
     public function search(AnalysisFilterRequest $request)
     {
