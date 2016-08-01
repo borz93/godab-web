@@ -42,9 +42,6 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         return view('admin.post.postEdit',compact('post'));
     }
-//    public function show($id)
-//    {
-//    }
     public function update(PostsRequest $request, $id)
     {
         if ($request->hasFile('image')) {
@@ -92,7 +89,7 @@ class PostController extends Controller
      * @param null $fileToUpdate
      * @return FileModel|null
      */
-    private function imageManipulate($image,$fileName,$fileToUpdate = null )
+    private function imageManipulate($image,$fileName,$fileToUpdate = null)
     {
         if($fileToUpdate)
         {
@@ -102,8 +99,9 @@ class PostController extends Controller
             $file = new FileModel();
         }
         $imageManager = new Image();
-        $img = $imageManager->make($image->getRealPath())->encode('png');
-        $img->resize(intval(500), null, function ($constraint) {
+        $img = $imageManager->make($image->getRealPath())
+            ->encode('png')
+            ->resize(intval(500), null, function ($constraint) {
             $constraint->aspectRatio();
         });
         $file->name = str_slug($fileName,'-') . '_post.png';
