@@ -157,10 +157,11 @@ class AnalysisController extends Controller
             $file = new FileModel();
         }
         $imageManager = new Image();
-        $img = $imageManager->make($image->getRealPath())->encode('png');
-        $img->resize(intval(500), null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        $img = $imageManager->make($image->getRealPath())
+            ->encode('png')
+            ->resize(intval(500), null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
         $file->name = str_slug($fileName,'-') . '_analysis.png';
         $file->route = storage_path('app/images/analysis_images/'). $file->name;
         $file->mimetype = $img->mime();

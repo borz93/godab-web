@@ -97,10 +97,11 @@ class SessionGenreController extends Controller
             $file = new FileModel();
         }
         $imageManager = new Image();
-        $img = $imageManager->make($image->getRealPath())->encode('png');
-        $img->resize(intval(500), null, function ($constraint) {
-            $constraint->aspectRatio();
-        });
+        $img = $imageManager->make($image->getRealPath())
+            ->encode('png')
+            ->resize(intval(500), null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
         $file->name = str_slug($fileName,'-') . '_session_genre.png';
         $file->route = storage_path('app/images/sessions/genre_images/'). $file->name;
         $file->mimetype = $img->mime();
